@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url(./fonts/stylesheet.css);
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@500&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+
+  font-family: 'Roboto';
+  height: 100vh;
+}
+
+.container {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+.sidebar {
+  height: 100%;
+  width: 35%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s ease-in-out;
+
+  &>div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+
+  h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: -30px;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+
+    span:first-child {
+      font-family: 'Marvel';
+      text-transform: uppercase;
+      padding: 7px 8px 0;
+      position: relative;
+      background-color: red;
+      z-index: 1;
+    }
+
+    span:last-child {
+      border-top: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      text-transform: uppercase;
+      font-family: 'Alumni Sans', sans-serif;
+      font-size: 36px;
+      line-height: 37px;
+    }
+  }
+
+  p {
+    font-weight: bold;
+    font-size: 80px;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 10px red;
+    border: 3px solid #fff;
+    position: relative;
+    line-height: 1;
+    padding: 0 5px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      top: -3px;
+      left: 0;
+      box-shadow: 0 3px 7px red;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: calc(100% + 6px);
+      height: 3px;
+      bottom: -3px;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 3px 7px red;
+    }
+  }
+}
+
+.main-slide {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 35%;
+  width: 65%;
+  transition: transform 0.5s ease-in-out;
+
+  &>div {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+button {
+  background-color: #fff;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 15px;
+}
+
+button:hover {
+  color: #222;
+}
+
+button:focus {
+  outline: none;
+}
+
+.container .controls button {
+  position: absolute;
+  left: 35%;
+  top: 50%;
+  z-index: 100;
+}
+
+.container .controls .down-button {
+  transform: translateX(-100%);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.container .controls .up-button {
+  transform: translateY(-100%);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
